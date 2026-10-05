@@ -1,0 +1,978 @@
+/* ============================================================
+   MATRIX — TERMS OF SERVICE
+   ============================================================ */
+
+:root {
+
+    --black: #050505;
+    --dark: #090909;
+    --dark-card: #101010;
+    --gray: #a7a7a7;
+    --light: #f5f5f5;
+    --white: #ffffff;
+
+    --yellow: #ffd21a;
+    --orange: #ff7a00;
+    --red: #ff1744;
+    --magenta: #e02cff;
+    --purple: #7c3cff;
+    --blue: #173cff;
+
+    --gradient:
+        linear-gradient(
+            90deg,
+            var(--yellow),
+            var(--orange),
+            var(--red),
+            var(--magenta),
+            var(--purple),
+            var(--blue)
+        );
+
+}
+
+
+/* ============================================================
+   RESET
+   ============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(224, 44, 255, 0.12),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 10% 30%,
+            rgba(255, 122, 0, 0.07),
+            transparent 30%
+        ),
+        var(--black);
+
+    color: var(--light);
+
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    line-height: 1.7;
+
+    overflow-x: hidden;
+
+}
+
+
+/* ============================================================
+   GRID BACKGROUND
+   ============================================================ */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 80%
+        );
+
+    z-index: -1;
+
+}
+
+
+/* ============================================================
+   LANGUAGE BUTTON
+   ============================================================ */
+
+.language-toggle {
+
+    position: fixed;
+
+    top: 20px;
+    right: 20px;
+
+    z-index: 100;
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    background:
+        rgba(15,15,15,0.9);
+
+    color: white;
+
+    padding: 10px 16px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    backdrop-filter: blur(12px);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.language-toggle:hover {
+
+    transform: translateY(-2px);
+
+    border-color: rgba(255,255,255,0.35);
+
+    box-shadow:
+        0 0 25px rgba(224,44,255,0.15);
+
+}
+
+
+/* ============================================================
+   MAIN CONTAINER
+   ============================================================ */
+
+.container {
+
+    width: min(1000px, calc(100% - 32px));
+
+    margin: 0 auto;
+
+    padding:
+        70px
+        0
+        50px;
+
+}
+
+
+/* ============================================================
+   LOGO
+   ============================================================ */
+
+.logo-container {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-bottom: 28px;
+
+}
+
+
+.logo {
+
+    width: min(650px, 90%);
+
+    height: auto;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 0 25px
+            rgba(224,44,255,0.15)
+        );
+
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.header {
+
+    text-align: center;
+
+    margin-bottom: 40px;
+
+}
+
+
+.badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 6px 13px;
+
+    border-radius: 999px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    background: rgba(255,255,255,0.035);
+
+    color: #d5d5d5;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.badge span {
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--red);
+
+    box-shadow:
+        0 0 10px var(--red);
+
+}
+
+
+.header h1 {
+
+    font-size: clamp(36px, 7vw, 62px);
+
+    line-height: 1.05;
+
+    font-weight: 900;
+
+    letter-spacing: -2px;
+
+    background: var(--gradient);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+}
+
+
+.subtitle {
+
+    color: #c5c5c5;
+
+    font-size: 17px;
+
+    margin-top: 15px;
+
+}
+
+
+.updated {
+
+    color: #777;
+
+    font-size: 13px;
+
+    margin-top: 7px;
+
+}
+
+
+/* ============================================================
+   QUICK NAVIGATION
+   ============================================================ */
+
+.quick-nav {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.quick-nav a {
+
+    color: #aaa;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    padding: 8px 13px;
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,0.035);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.quick-nav a:hover {
+
+    color: white;
+
+    border-color: rgba(255,255,255,0.25);
+
+    transform: translateY(-2px);
+
+}
+
+
+/* ============================================================
+   OVERVIEW
+   ============================================================ */
+
+.overview {
+
+    position: relative;
+
+    padding: 28px;
+
+    margin-bottom: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.055),
+            rgba(255,255,255,0.02)
+        );
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+.overview::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background: var(--gradient);
+
+}
+
+
+.overview h2 {
+
+    font-size: 19px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.overview-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+
+}
+
+
+.overview-card {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 13px;
+
+    padding: 15px;
+
+    border-radius: 13px;
+
+    background: rgba(0,0,0,0.25);
+
+    border: 1px solid rgba(255,255,255,0.06);
+
+}
+
+
+.overview-icon {
+
+    flex-shrink: 0;
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: var(--gradient);
+
+    color: #000;
+
+    font-weight: 900;
+
+}
+
+
+.overview-card strong {
+
+    display: block;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.overview-card p {
+
+    color: #888;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    margin-top: 3px;
+
+}
+
+
+/* ============================================================
+   LEGAL CARDS
+   ============================================================ */
+
+.legal-card {
+
+    position: relative;
+
+    margin-top: 18px;
+
+    padding: 30px 32px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.045),
+            rgba(255,255,255,0.018)
+        );
+
+    border: 1px solid rgba(255,255,255,0.075);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+
+}
+
+
+.legal-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 3px;
+    height: 100%;
+
+    background: var(--gradient);
+
+}
+
+
+.legal-card:hover {
+
+    transform: translateY(-2px);
+
+    border-color:
+        rgba(255,255,255,0.15);
+
+}
+
+
+.section-number {
+
+    display: inline-block;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    color: #777;
+
+    margin-bottom: 5px;
+
+}
+
+
+.legal-card h2 {
+
+    font-size: 21px;
+
+    margin-bottom: 12px;
+
+    color: white;
+
+}
+
+
+.legal-card p {
+
+    color: #aaa;
+
+    font-size: 14px;
+
+    margin-bottom: 13px;
+
+}
+
+
+.legal-card p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+.legal-card ul {
+
+    margin-top: 10px;
+
+    padding-left: 21px;
+
+    color: #aaa;
+
+}
+
+
+.legal-card li {
+
+    margin-bottom: 7px;
+
+    font-size: 14px;
+
+}
+
+
+.legal-card li::marker {
+
+    color: var(--magenta);
+
+}
+
+
+/* ============================================================
+   DISCORD CARD
+   ============================================================ */
+
+.discord-card {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-top: 22px;
+
+    padding: 28px 30px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(255,210,26,0.08),
+            rgba(224,44,255,0.08),
+            rgba(23,60,255,0.08)
+        );
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+}
+
+
+.discord-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    top: 0;
+
+    height: 2px;
+
+    background: var(--gradient);
+
+}
+
+
+.discord-label {
+
+    color: #888;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.discord-card h2 {
+
+    font-size: 22px;
+
+    margin: 5px 0;
+
+}
+
+
+.discord-card p {
+
+    color: #999;
+
+    font-size: 13px;
+
+}
+
+
+.discord-button {
+
+    flex-shrink: 0;
+
+    text-decoration: none;
+
+    color: #050505;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    padding: 12px 20px;
+
+    border-radius: 11px;
+
+    background: var(--gradient);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.discord-button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 30px rgba(224,44,255,0.18);
+
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+footer {
+
+    text-align: center;
+
+    padding-top: 35px;
+
+}
+
+
+.legal-links {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.legal-links a {
+
+    color: #888;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    transition: color 0.2s ease;
+
+}
+
+
+.legal-links a:hover,
+.legal-links a.active {
+
+    color: white;
+
+}
+
+
+.legal-links span {
+
+    color: #444;
+
+}
+
+
+.copyright {
+
+    color: #555;
+
+    font-size: 11px;
+
+    margin-top: 10px;
+
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+    .container {
+
+        width: min(
+            100% - 22px,
+            1000px
+        );
+
+        padding-top: 80px;
+
+    }
+
+
+    .language-toggle {
+
+        top: 12px;
+        right: 12px;
+
+        padding: 8px 11px;
+
+        font-size: 12px;
+
+    }
+
+
+    .logo {
+
+        width: 95%;
+
+    }
+
+
+    .header h1 {
+
+        letter-spacing: -1.5px;
+
+    }
+
+
+    .subtitle {
+
+        font-size: 15px;
+
+    }
+
+
+    .overview {
+
+        padding: 21px;
+
+    }
+
+
+    .overview-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .legal-card {
+
+        padding: 25px 23px;
+
+    }
+
+
+    .legal-card h2 {
+
+        font-size: 19px;
+
+    }
+
+
+    .legal-card p,
+    .legal-card li {
+
+        font-size: 13px;
+
+    }
+
+
+    .discord-card {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 25px;
+
+    }
+
+
+    .discord-button {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+
+    .quick-nav {
+
+        gap: 7px;
+
+    }
+
+
+    .quick-nav a {
+
+        font-size: 11px;
+
+        padding: 7px 10px;
+
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .header h1 {
+
+        font-size: 35px;
+
+    }
+
+
+    .legal-card {
+
+        padding: 22px 19px;
+
+    }
+
+
+    .overview-card {
+
+        padding: 13px;
+
+    }
+
+}
